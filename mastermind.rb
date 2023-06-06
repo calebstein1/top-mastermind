@@ -28,6 +28,7 @@ class HumanMaker < Maker
     puts 'Enter code:'
     self.code = get_valid_input
     code.map! { |num| num.to_i }
+    puts "\e[H\e[2J"
   end
 end
 
@@ -112,7 +113,6 @@ maker = choose_player('Maker')
 breaker = choose_player('Breaker')
 
 maker.generate_code
-puts "The code is #{maker.code}"
 
 12.times do
   breaker.make_guess
